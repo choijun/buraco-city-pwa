@@ -54,7 +54,7 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <div>
-        <input id="camera" type="file" accept="image/*" capture="camera" style={inputFileCameraStyle}/>
+          <input id="camera" type="file" accept="image/*" capture="camera" style={inputFileCameraStyle}/>
           <AppBar
             title="Buraco City"
             showMenuIconButton={false}
