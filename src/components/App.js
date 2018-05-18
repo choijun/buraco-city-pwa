@@ -12,7 +12,6 @@ import Map from './Map';
 
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
-import $ from 'jquery';
 
 const floatingButtonStyle = {
   bottom: '25px',
@@ -47,7 +46,7 @@ class App extends Component {
   }
 
   openCamera() {
-    $('#camera').click();
+    document.querySelector("#camera").click()
   }
 
   render() {
