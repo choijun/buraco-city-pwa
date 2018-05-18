@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import FlatButton from 'material-ui/FlatButton';
 
 const style = {
-    color: 'white'
+    'color': 'white',
+    'margin-top': '5px'
 }
 
 class LoginButton extends Component{
