@@ -20,7 +20,7 @@ const MyMapComponent = compose(
   withGoogleMap
 )(props => (
   <GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
-    <Marker position={{ lat: -34.397, lng: 150.644 }} />
+    <Marker position={{ lat: -34.397, lng: 150.644 }}  options={{ icon: 'https://static.getjar.com/icon-50x50/42/837762_thm.png'}} />
   </GoogleMap>
 ));
 
