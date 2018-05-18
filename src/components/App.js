@@ -43,9 +43,9 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <div className={'heeey'}>
+        <div>
           <AppBar
-            title="Buracos City"
+            title="Buraco City"
             showMenuIconButton={false}
             iconElementRight={this.state.logged ? <Logged logout={this.logout}/> : <Login onClick={this.login}/>}
           />
