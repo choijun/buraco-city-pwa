@@ -17,7 +17,7 @@ class List extends Component{
 
     render() {
         return (
-            <div className='list-of-posts'>
+            <div>
                 <h1>List of posts</h1>
                 {this.mapItems()}
             </div>

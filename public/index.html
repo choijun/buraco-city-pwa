@@ -36,5 +36,44 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-messaging.js"></script>
+    
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDja_lEC5zV12tTU0w5KJx0CwumQp9HKyk",
+        authDomain: "buraco-city.firebaseapp.com",
+        databaseURL: "https://buraco-city.firebaseio.com",
+        projectId: "buraco-city",
+        storageBucket: "",
+        messagingSenderId: "237495329771"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+          .then(function() {
+                console.log('Service Worker Registered');
+          });
+      }
+    </script>
+    <script>
+        const messaging = firebase.messaging();
+        messaging.requestPermission()
+        .then(function() {
+          console.log('Notification permission granted.');
+          return messaging.getToken();
+        })
+        .then(function(token) {
+          console.log(token);
+        })
+        .catch(function(err) {
+          console.log('Unable to get permission to notify.', err);
+        })
+      </script>
   </body>
 </html>
