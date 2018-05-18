@@ -12,11 +12,16 @@ import Map from './Map';
 
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
+import $ from 'jquery';
 
 const floatingButtonStyle = {
   bottom: '25px',
   right: '25px',
   position: 'absolute'
+}
+
+const inputFileCameraStyle = {
+  display: 'none'
 }
 
 class App extends Component {
@@ -30,6 +35,7 @@ class App extends Component {
 
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
+    this.openCamera = this.openCamera.bind(this);
   }
 
   login() {
@@ -40,17 +46,22 @@ class App extends Component {
     this.setState({logged: false});
   }
 
+  openCamera() {
+    $('#camera').click();
+  }
+
   render() {
     return (
       <MuiThemeProvider>
         <div>
+        <input id="camera" type="file" accept="image/*" capture="camera" style={inputFileCameraStyle}/>
           <AppBar
             title="Buraco City"
             showMenuIconButton={false}
             iconElementRight={this.state.logged ? <Logged logout={this.logout}/> : <Login onClick={this.login}/>}
           />
           <Map />
-          <FloatingActionButton style={floatingButtonStyle}>
+          <FloatingActionButton style={floatingButtonStyle} onClick={this.openCamera}>
             <ContentAdd />
           </FloatingActionButton>
         </div>
